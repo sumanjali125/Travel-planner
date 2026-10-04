@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+        nav {
+            background: #0b3954;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            color: #ffcc70;
+        }
+        .hero {
+            height: 600px;
+            background-image:
+                linear-gradient(
+                    rgba(0,0,0,0.45),
+                    rgba(0,0,0,0.45)
+                ),
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 22px;
+        }
+        #destinations {
+            padding: 70px 7%;
+        }
+        h2 {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 10px;
+            color: #0b3954;
+        }
+        .section-text {
+            text-align: center;
+            margin-bottom: 40px;
+           color: #666;
+        }
+        .destination-container {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 30px;
+        }
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.2);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            color: #0b3954;
+            font-size: 23px;
+           margin-bottom: 10px;
+        }
+        .card-content p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: 0;
+            border-radius: 10px;
+        }
+        footer {
+            background: #0b3954;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @media (max-width: 1000px) {
+            .destination-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .destination-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+             Travel Planner
+        </div>
+        <ul>
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#destinations">
+                    Destinations
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section id="home" class="hero">
+        <div>
+            <h1>
+                Explore The World 🌍
+            </h1>
+            <p>
+                Discover beautiful places around the world.
+            </p>
+        </div>
+    </section>
+    <section id="destinations">
+        <h2>
+            Popular Destinations
+        </h2>
+        <p class="section-text">
+            Explore amazing destinations with photos and maps.
+        </p>
+        <div class="destination-container">
+            <div class="destination-card">
+                <img
+                    src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"
+                    alt="Paris">
+                <div class="card-content">
+                    <h3>
+                        🇫🇷 Paris, France
+                    </h3>
+                    <p>
+                        Visit the Eiffel Tower, Louvre Museum
+                        and beautiful streets of Paris.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Eiffel+Tower+Paris&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img
+                    src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80"
+                    alt="Tokyo">
+                <div class="card-content">
+                    <h3>
+                        🇯🇵 Tokyo, Japan
+                    </h3>
+                    <p>
+                        Experience Japanese culture, temples,
+                        technology and delicious food.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Tokyo+Japan&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img
+                    src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=900&q=80"
+                    alt="New York">
+
+                <div class="card-content">
+                    <h3>
+                        🇺🇸 New York, USA
+                    </h3>
+                    <p>
+                        Explore Times Square, Central Park
+                        and the Statue of Liberty.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Statue+of+Liberty+New+York&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="destination-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+                    alt="Dubai">
+                <div class="card-content">
+
+                    <h3>
+                        🇦🇪 Dubai, UAE
+                    </h3>
+
+                    <p>
+                        See Burj Khalifa, Dubai Mall
+                        and beautiful desert landscapes.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Burj+Khalifa+Dubai&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img
+                    src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80"
+                    alt="Bali">
+                <div class="card-content">
+                    <h3>
+                        🇮🇩 Bali, Indonesia
+                    </h3>
+                    <p>
+                        Relax on beautiful beaches, explore
+                        temples and tropical forests.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Bali+Indonesia&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img
+                    src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=900&q=80"
+                    alt="Switzerland">
+                <div class="card-content">
+                    <h3>
+                        🇨🇭 Switzerland
+                    </h3>
+                    <p>
+                        Enjoy the Swiss Alps, mountains,
+                        lakes and scenic train journeys.
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps?q=Swiss+Alps+Switzerland&output=embed"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
